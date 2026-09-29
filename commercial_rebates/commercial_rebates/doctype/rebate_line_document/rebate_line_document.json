@@ -1,0 +1,90 @@
+{
+ "actions": [],
+ "creation": "2026-09-28 10:00:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "line_num",
+  "sales_invoice",
+  "posting_date",
+  "customer",
+  "col_break_1",
+  "amount",
+  "tax_template",
+  "status",
+  "remarks"
+ ],
+ "fields": [
+  {
+   "fieldname": "line_num",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Rif. Riga Contratto",
+   "reqd": 1
+  },
+  {
+   "fieldname": "sales_invoice",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Nota di Credito (Sales Invoice)",
+   "options": "Sales Invoice",
+   "reqd": 1
+  },
+  {
+   "fieldname": "posting_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Data Registrazione"
+  },
+  {
+   "fieldname": "customer",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Cliente Intestatario",
+   "options": "Customer"
+  },
+  {
+   "fieldname": "col_break_1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0.00",
+   "fieldname": "amount",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Importo Liquidato (€)",
+   "reqd": 1
+  },
+  {
+   "fieldname": "tax_template",
+   "fieldtype": "Link",
+   "label": "Codice IVA",
+   "options": "Sales Taxes and Charges Template"
+  },
+  {
+   "default": "Bozza (Draft)",
+   "fieldname": "status",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Stato Avanzamento ERPNext"
+  },
+  {
+   "fieldname": "remarks",
+   "fieldtype": "Small Text",
+   "label": "Causale Documento"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2026-09-28 10:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Commercial Rebates",
+ "name": "Rebate Line Document",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "posting_date",
+ "sort_order": "DESC",
+ "track_changes": 1
+}

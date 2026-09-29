@@ -1,0 +1,1 @@
+# Nessuna dipendenza esterna: sfrutta le librerie native di Frappe ed ERPNext

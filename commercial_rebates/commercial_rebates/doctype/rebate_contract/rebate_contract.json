@@ -1,0 +1,231 @@
+{
+ "actions": [],
+ "autoname": "naming_series:",
+ "creation": "2026-09-28 10:00:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "naming_series",
+  "title",
+  "status",
+  "company",
+  "col_break_1",
+  "target_type",
+  "customer",
+  "customer_group",
+  "sec_break_validity",
+  "valid_from",
+  "valid_to",
+  "sec_break_lines",
+  "lines",
+  "sec_break_totals",
+  "total_award",
+  "total_liquidated",
+  "total_settlement",
+  "sec_break_docs",
+  "estratto_conto_html",
+  "documents",
+  "sec_break_notes",
+  "notes"
+ ],
+ "fields": [
+  {
+   "default": "CTR-PREM-.YYYY.-.#####",
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Serie Numerazione",
+   "options": "CTR-PREM-.YYYY.-.#####",
+   "reqd": 1
+  },
+  {
+   "fieldname": "title",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Titolo Contratto",
+   "reqd": 1
+  },
+  {
+   "default": "Attivo",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Stato Contratto",
+   "options": "Bozza\nAttivo\nInattivo\nChiuso"
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "label": "Azienda (Company)",
+   "options": "Company",
+   "reqd": 1
+  },
+  {
+   "fieldname": "col_break_1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "Customer",
+   "fieldname": "target_type",
+   "fieldtype": "Select",
+   "label": "Destinatario Contratto",
+   "options": "Customer\nCustomer Group",
+   "reqd": 1
+  },
+  {
+   "depends_on": "eval:doc.target_type=='Customer'",
+   "fieldname": "customer",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Cliente Intestatario",
+   "options": "Customer"
+  },
+  {
+   "depends_on": "eval:doc.target_type=='Customer Group'",
+   "fieldname": "customer_group",
+   "fieldtype": "Link",
+   "label": "Gruppo Cliente",
+   "options": "Customer Group"
+  },
+  {
+   "fieldname": "sec_break_validity",
+   "fieldtype": "Section Break",
+   "label": "Periodo Contrattuale"
+  },
+  {
+   "fieldname": "valid_from",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Data Inizio Validità",
+   "reqd": 1
+  },
+  {
+   "fieldname": "valid_to",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Data Fine Validità",
+   "reqd": 1
+  },
+  {
+   "fieldname": "sec_break_lines",
+   "fieldtype": "Section Break",
+   "label": "Condizioni e Scaglioni di Premio Fuori Fattura"
+  },
+  {
+   "fieldname": "lines",
+   "fieldtype": "Table",
+   "label": "Condizioni di Calcolo",
+   "options": "Rebate Contract Line"
+  },
+  {
+   "fieldname": "sec_break_totals",
+   "fieldtype": "Section Break",
+   "label": "Consuntivo Finanziario Contratto (Conguaglio Complessivo)"
+  },
+  {
+   "default": "0.00",
+   "fieldname": "total_award",
+   "fieldtype": "Currency",
+   "label": "Totale Premio Maturato (€)",
+   "read_only": 1
+  },
+  {
+   "default": "0.00",
+   "fieldname": "total_liquidated",
+   "fieldtype": "Currency",
+   "label": "Totale Già Liquidato (€)",
+   "read_only": 1
+  },
+  {
+   "default": "0.00",
+   "fieldname": "total_settlement",
+   "fieldtype": "Currency",
+   "label": "Totale Residuo da Liquidare / Conguaglio (€)",
+   "read_only": 1
+  },
+  {
+   "collapsed": 0,
+   "fieldname": "sec_break_docs",
+   "fieldtype": "Section Break",
+   "label": "Estratto Conto Note di Credito e Liquidazioni"
+  },
+  {
+   "fieldname": "estratto_conto_html",
+   "fieldtype": "HTML",
+   "label": "Estratto Conto Dettagliato"
+  },
+  {
+   "fieldname": "documents",
+   "fieldtype": "Table",
+   "label": "Elenco Documenti Emessi",
+   "options": "Rebate Line Document",
+   "read_only": 1
+  },
+  {
+   "collapsed": 1,
+   "fieldname": "sec_break_notes",
+   "fieldtype": "Section Break",
+   "label": "Note e Pattuizioni Commerciali"
+  },
+  {
+   "fieldname": "notes",
+   "fieldtype": "Small Text",
+   "label": "Note"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-09-28 10:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Commercial Rebates",
+ "name": "Rebate Contract",
+ "naming_rule": "By \"Naming Series\" field",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Sales Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Accounts Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Sales User"
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}

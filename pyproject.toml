@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "commercial_rebates"
+version = "1.0.0"
+description = "Commercial Rebates and Commissions Management for ERPNext v15/v16"
+readme = "README.md"
+authors = [
+    { name = "Corrado Schiavo", email = "info@iocode.it" }
+]
+license = { text = "MIT" }
+dependencies = []
+
+[project.urls]
+Homepage = "https://github.com/corradoschiavo/commercial_rebates"

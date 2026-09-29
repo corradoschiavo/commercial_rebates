@@ -1,0 +1,83 @@
+{
+ "actions": [],
+ "creation": "2026-09-28 10:00:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "line_num",
+  "description",
+  "item_group",
+  "item_code",
+  "col_break_1",
+  "customer_group",
+  "customer",
+  "commission_percent"
+ ],
+ "fields": [
+  {
+   "fieldname": "line_num",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "N. Regola"
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Descrizione Regola",
+   "reqd": 1
+  },
+  {
+   "default": "all",
+   "fieldname": "item_group",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Gruppo Articolo",
+   "options": "Item Group"
+  },
+  {
+   "fieldname": "item_code",
+   "fieldtype": "Link",
+   "label": "Articolo Specifico",
+   "options": "Item"
+  },
+  {
+   "fieldname": "col_break_1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "all",
+   "fieldname": "customer_group",
+   "fieldtype": "Link",
+   "label": "Gruppo Cliente",
+   "options": "Customer Group"
+  },
+  {
+   "fieldname": "customer",
+   "fieldtype": "Link",
+   "label": "Cliente Specifico",
+   "options": "Customer"
+  },
+  {
+   "default": "0.0",
+   "fieldname": "commission_percent",
+   "fieldtype": "Percent",
+   "in_list_view": 1,
+   "label": "% Provvigione",
+   "reqd": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2026-09-28 10:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Commercial Rebates",
+ "name": "Commission Agreement Line",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "line_num",
+ "sort_order": "ASC",
+ "track_changes": 1
+}
